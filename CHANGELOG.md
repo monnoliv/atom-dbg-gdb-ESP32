@@ -19,6 +19,8 @@
 	* Added: Breakpoints now work with dynamically loaded libraries ([CedScilab](https://github.com/CedScilab))
 * #### 1.7.8
 	* Improved: Better reporting when executable debug symbols are not available or breakpoints are in invalid files ([#35 - wevcode](https://github.com/31i73/atom-dbg/issues/35))
+* #### 1.7.9
+	* Fixed: Error in remote debugging ([#29 - ceremcem](https://github.com/31i73/atom-dbg-gdb/issues/29))
 
 ## 1.6.0
 * Added: `gdb_executable`, `gdb_arguments` and `gdb_commands` parameters

@@ -1,11 +1,12 @@
 {
-  "name": "dbg-gdb",
+  "name": "dbg-gdb-ESP32",
   "main": "./lib/main",
-  "version": "1.7.8",
-  "description": "An interactive GDB debugger for Atom",
+  "version": "1.7.9",
+  "description": "An interactive remote GDB debugger for Atom",
   "keywords": [
     "gdb",
     "debugger",
+	"remote"
     "C",
     "C++",
     "D",
@@ -17,13 +18,13 @@
     "assembly",
     "Ada"
   ],
-  "repository": "https://github.com/31i73/atom-dbg-gdb",
+  "repository": "https://github.com/monnoliv/atom-dbg-gdb-ESP32",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "package-deps": [
-    "dbg",
+    "dbg2",
     "output-panel"
   ],
   "dependencies": {
@@ -38,9 +39,9 @@
     }
   },
   "consumedServices": {
-    "dbg": {
+    "dbg2": {
       "versions": {
-        "^1.0.0": "consumeDbg"
+        "^1.6.4": "consumeDbg"
       }
     },
     "output-panel": {

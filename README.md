@@ -1,6 +1,11 @@
-# dbg-gdb package
+# dbg-gdb-ESP32 package
 
-An interactive GDB debugger for Atom
+This package is the the same as the dbg-gdb one but with the bug in file main.coffee removed
+I use it for ESP32 debugging with OpenOCD but can but used for any remote
+
+#### It seems that the 31i73/atom-dbg-gdb initial package is no longer maintained
+
+An interactive GDB remote debugger for Atom
 
 ![Debug screenshot](http://i.imgur.com/XcI592U.png)
 

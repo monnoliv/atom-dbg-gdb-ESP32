@@ -193,30 +193,30 @@ module.exports = DbgGdb =
 
 				task = task.then =>
 					@sendCommand '-exec-arguments ' + options.args.join(" ") if options.args?
-					@sendCommand '-exec-run'
-						.then =>
-							started()
-						, (error) =>
-							if typeof error != 'string' then return
-							if error.match /target does not support "run"/
-								@sendCommand '-exec-continue'
-									.then =>
-										started()
-									, (error) =>
-										if typeof error != 'string' then return
-										@handleMiError error, 'Unable to debug this with GDB'
-										@dbg.stop()
-								return
-
-							else if error.match /no executable file specified/i
-								atom.notifications.addError 'Nothing to debug',
-									description: 'Nothing was specified for GDB to debug. Specify a `path`, or `gdb_commands` to select a target'
-									dismissable: true
-
-							else
-								@handleMiError error, 'Unable to debug this with GDB'
-
-							@dbg.stop()
+#					@sendCommand '-exec-run'
+#						.then =>
+#							started()
+#						, (error) =>
+#							if typeof error != 'string' then return
+#							if error.match /target does not support "run"/
+#								@sendCommand '-exec-continue'
+#									.then =>
+#										started()
+#									, (error) =>
+#										if typeof error != 'string' then return
+#										@handleMiError error, 'Unable to debug this with GDB'
+#										@dbg.stop()
+#								return
+#
+#							else if error.match /no executable file specified/i
+#								atom.notifications.addError 'Nothing to debug',
+#									description: 'Nothing was specified for GDB to debug. Specify a `path`, or `gdb_commands` to select a target'
+#									dismissable: true
+#
+#							else
+#								@handleMiError error, 'Unable to debug this with GDB'
+#
+#							@dbg.stop()
 
 			@sendCommand '-gdb-set mi-async on'
 				.then => begin()
